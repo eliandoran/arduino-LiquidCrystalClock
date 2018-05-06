@@ -1,6 +1,8 @@
 #include <Arduino.h>
 #include <LiquidCrystal.h>
 
+#include "BigDigits/BigDigit.hpp"
+
 LiquidCrystal lcd(7, 8, 9, 10, 11, 12);
 
 const int GLYPH_TEMPERATURE = 0;
@@ -116,29 +118,13 @@ byte bigDigits[][4] = {
       GLYPH_DIGIT_C, GLYPH_DIGIT_TOP_BOTTOM }
 };
 
-void drawDigit(short startX, short digit) {
-    short x = startX;
-    short y = 0;
-
-    for (int i=0; i<2; i++) {
-        x = startX;
-
-        for (int j=0; j<2; j++) {
-            int glyph = bigDigits[digit][2*i+j];
-
-            if (glyph != NULL) {
-                lcd.setCursor(x, y);
-                lcd.write(glyph);
-            }
-
-            x += 1;
-        }
-
-        y += 1;
-    }
-}
-
 void setup() {
+    Serial.begin(9600);
+    Serial.println("Hello world.");
+
+    BigDigit digit;
+    digit.segmentDebug();
+
     lcd.createChar(0, glyphTemp);
     lcd.createChar(1, glyphDegree);
     lcd.createChar(2, glyphHumidity);
@@ -149,14 +135,11 @@ void setup() {
     lcd.createChar(GLYPH_DIGIT_C, glyphDigitC);
 
     lcd.begin(16, 2);
+    digit.drawDigit(lcd, 1, 1);
+    digit.drawDigit(lcd, 2, 2);
+
     //drawTemperature();
     //drawHumidity();
-    drawDigit(0, 1);
-    drawDigit(2, 2);
-    lcd.setCursor(4, 1);
-    lcd.write(':');
-    drawDigit(5, 2);
-    drawDigit(7, 1);
 }
 
 void drawTemperature() {
