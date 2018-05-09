@@ -1,0 +1,3 @@
+[submodule "lib/LiquidCrystalPlus"]
+	path = lib/LiquidCrystalPlus
+	url = https://github.com/eliandoran/arduino-LiquidCrystalPlus
