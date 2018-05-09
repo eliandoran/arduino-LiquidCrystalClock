@@ -4,7 +4,7 @@
 //LiquidCrystal lcd(7, 8, 9, 10, 11, 12);
 LiquidCrystal lcd(8, 9, 4, 5, 6, 7);
 
-const byte glyphLargeRight[] = {
+uint8_t glyphLargeRight[] = {
   0b00011,
   0b00011,
   0b00011,
@@ -15,7 +15,7 @@ const byte glyphLargeRight[] = {
   0b00011
 };
 
-const byte glyphLargeTopLeftBottom[] = {
+uint8_t glyphLargeTopLeftBottom[] = {
   0b11111,
   0b11111,
   0b11000,
@@ -26,7 +26,7 @@ const byte glyphLargeTopLeftBottom[] = {
   0b11111,
 };
 
-const byte glyphLargeTopBottom[] = {
+uint8_t glyphLargeTopBottom[] = {
   0b11111,
   0b11111,
   0b00000,
@@ -37,7 +37,7 @@ const byte glyphLargeTopBottom[] = {
   0b11111,
 };
 
-const byte glyphLargeBottomRight[] = {
+uint8_t glyphLargeBottomRight[] = {
   0b00011,
   0b00011,
   0b00011,
@@ -48,7 +48,7 @@ const byte glyphLargeBottomRight[] = {
   0b11111,
 };
 
-const byte glyphLargeBottom[] = {
+uint8_t glyphLargeBottom[] = {
   0b00000,
   0b00000,
   0b00000,
@@ -60,7 +60,7 @@ const byte glyphLargeBottom[] = {
 };
 
 
-const byte glyphBlank[] = {
+uint8_t glyphBlank[] = {
   0b00000,
   0b00000,
   0b00000,
@@ -71,7 +71,7 @@ const byte glyphBlank[] = {
   0b00000
 };
 
-const byte glyphDigit2[] = {
+uint8_t glyphDigit2[] = {
   0b11111,
   0b00001,
   0b00001,
@@ -82,7 +82,7 @@ const byte glyphDigit2[] = {
   0b11111
 };
 
-const byte glyphDigit4[] = {
+uint8_t glyphDigit4[] = {
   0b10001,
   0b10001,
   0b10001,
@@ -93,7 +93,7 @@ const byte glyphDigit4[] = {
   0b00001
 };
 
-const byte glyphTemp[] = {
+uint8_t glyphTemp[] = {
     B00100,
     B01010,
     B01010,
@@ -104,7 +104,7 @@ const byte glyphTemp[] = {
     B01110
 };
 
-const byte glyphHumidity[] = {
+uint8_t glyphHumidity[] = {
     B00000,
     B00100,
     B01010,
